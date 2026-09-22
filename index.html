@@ -1,0 +1,1897 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>وايت بيتش رأس البر | White Beach Ras El Bar — Luxury Resort & Beach</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg-dark: #071518;
+      --bg-card: #0c2024;
+      --sea-teal: #0e7c8d;
+      --sea-teal-hover: #1197ab;
+      --accent-gold: #c89f55;
+      --accent-gold-light: #e6c587;
+      --sand-cream: #faf6f0;
+      --sand-muted: #ece3d4;
+      --text-dark: #122123;
+      --text-light: #f0f6f6;
+      --text-muted: #8fa3a1;
+      --font-en-serif: 'Playfair Display', Georgia, serif;
+      --font-en-sans: 'Plus Jakarta Sans', sans-serif;
+      --font-ar-display: 'Tajawal', sans-serif;
+      --font-ar-body: 'Cairo', sans-serif;
+      --radius-sm: 8px;
+      --radius-md: 16px;
+      --radius-lg: 28px;
+      --radius-full: 9999px;
+      --transition-fast: 0.25s ease;
+      --transition-smooth: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* Global Base */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      background-color: var(--sand-cream);
+      color: var(--text-dark);
+      font-family: var(--font-ar-body);
+      line-height: 1.7;
+      overflow-x: hidden;
+      transition: background-color var(--transition-fast), color var(--transition-fast);
+    }
+
+    html[lang="en"] body {
+      font-family: var(--font-en-sans);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    button {
+      font: inherit;
+      cursor: pointer;
+      border: none;
+      background: none;
+    }
+
+    /* Typography Utilities */
+    .title-display {
+      font-family: var(--font-ar-display);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+    }
+
+    html[lang="en"] .title-display {
+      font-family: var(--font-en-serif);
+      font-weight: 600;
+      letter-spacing: -0.03em;
+    }
+
+    .kicker {
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--accent-gold);
+      margin-bottom: 0.6rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .kicker::before {
+      content: '';
+      display: inline-block;
+      width: 18px;
+      height: 2px;
+      background-color: var(--accent-gold);
+      border-radius: 2px;
+    }
+
+    /* Buttons & Links */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.65rem;
+      padding: 0.9rem 1.8rem;
+      border-radius: var(--radius-full);
+      font-weight: 700;
+      font-size: 0.95rem;
+      transition: all var(--transition-smooth);
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .btn-primary {
+      background-color: var(--sea-teal);
+      color: #ffffff;
+      box-shadow: 0 8px 24px rgba(14, 124, 141, 0.28);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--sea-teal-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(14, 124, 141, 0.4);
+    }
+
+    .btn-gold {
+      background-color: var(--accent-gold);
+      color: var(--bg-dark);
+      box-shadow: 0 8px 24px rgba(200, 159, 85, 0.3);
+    }
+
+    .btn-gold:hover {
+      background-color: var(--accent-gold-light);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(200, 159, 85, 0.45);
+    }
+
+    .btn-outline {
+      border: 1.5px solid currentColor;
+      color: inherit;
+    }
+
+    .btn-outline:hover {
+      background-color: rgba(255, 255, 255, 0.12);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline-dark {
+      border: 1.5px solid var(--bg-dark);
+      color: var(--bg-dark);
+    }
+
+    .btn-outline-dark:hover {
+      background-color: var(--bg-dark);
+      color: var(--sand-cream);
+    }
+
+    /* Navigation Bar */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      padding: 1.2rem 6vw;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.35s ease;
+      color: #ffffff;
+    }
+
+    header.scrolled {
+      background: rgba(7, 21, 24, 0.88);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      padding: 0.85rem 6vw;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-family: var(--font-en-serif);
+      font-size: 1.45rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--sea-teal), var(--accent-gold));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      color: #ffffff;
+      font-size: 1.3rem;
+      box-shadow: 0 4px 15px rgba(14, 124, 141, 0.4);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2.2rem;
+      list-style: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a {
+      position: relative;
+      padding: 0.25rem 0;
+      opacity: 0.9;
+      transition: opacity 0.2s ease;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--accent-gold);
+      transition: width var(--transition-fast);
+    }
+
+    html[dir="rtl"] .nav-links a::after {
+      left: auto;
+      right: 0;
+    }
+
+    .nav-links a:hover {
+      opacity: 1;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .lang-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.45rem 0.9rem;
+      border-radius: var(--radius-full);
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: #ffffff;
+      font-size: 0.85rem;
+      font-weight: 700;
+      backdrop-filter: blur(10px);
+      transition: all 0.25s ease;
+    }
+
+    .lang-toggle:hover {
+      background: rgba(255, 255, 255, 0.25);
+      transform: scale(1.03);
+    }
+
+    .menu-btn {
+      display: none;
+      font-size: 1.8rem;
+      color: #ffffff;
+      z-index: 1001;
+    }
+
+    /* Mobile Drawer */
+    .mobile-nav {
+      position: fixed;
+      inset: 0;
+      background: var(--bg-dark);
+      z-index: 999;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.35s ease;
+    }
+
+    .mobile-nav.open {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .mobile-nav ul {
+      list-style: none;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .mobile-nav a {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      height: 100vh;
+      min-height: 700px;
+      display: flex;
+      align-items: center;
+      padding: 0 7vw;
+      background: var(--bg-dark);
+      overflow: hidden;
+      color: #ffffff;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.72) saturate(1.1);
+      transform: scale(1.05);
+      animation: zoomHero 20s infinite alternate ease-in-out;
+    }
+
+    @keyframes zoomHero {
+      from { transform: scale(1); }
+      to { transform: scale(1.08); }
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        180deg,
+        rgba(7, 21, 24, 0.6) 0%,
+        rgba(7, 21, 24, 0.2) 45%,
+        rgba(7, 21, 24, 0.85) 100%
+      );
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 850px;
+      margin-top: 5vh;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.5rem 1.2rem;
+      border-radius: var(--radius-full);
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      color: var(--accent-gold-light);
+    }
+
+    .hero h1 {
+      font-size: clamp(2.8rem, 6vw, 5.5rem);
+      line-height: 1.1;
+      margin-bottom: 1.2rem;
+      text-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    }
+
+    .hero p {
+      font-size: clamp(1.1rem, 2vw, 1.4rem);
+      font-weight: 400;
+      opacity: 0.92;
+      max-width: 620px;
+      margin-bottom: 2.2rem;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.4);
+    }
+
+    .hero-cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      align-items: center;
+    }
+
+    /* Stats Quick Bar */
+    .hero-stats {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 7vw;
+      right: 7vw;
+      z-index: 3;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.5rem;
+      padding: 1.2rem 2rem;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #ffffff;
+    }
+
+    .stat-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .stat-icon {
+      font-size: 1.8rem;
+    }
+
+    .stat-text h4 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--accent-gold-light);
+    }
+
+    .stat-text p {
+      font-size: 0.8rem;
+      opacity: 0.85;
+    }
+
+    /* General Section Styling */
+    section {
+      padding: 6.5rem 7vw;
+    }
+
+    .section-header {
+      max-width: 680px;
+      margin-bottom: 3.5rem;
+    }
+
+    .section-title {
+      font-size: clamp(2.2rem, 4vw, 3.4rem);
+      color: var(--bg-dark);
+      margin-top: 0.4rem;
+    }
+
+    /* Section: Intro / Story */
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .intro-text h2 {
+      font-size: clamp(2.2rem, 3.8vw, 3.2rem);
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+    }
+
+    .intro-text p {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      margin-bottom: 1.8rem;
+    }
+
+    .intro-signature {
+      font-family: var(--font-en-serif);
+      font-size: 1.4rem;
+      font-style: italic;
+      color: var(--sea-teal);
+      font-weight: 600;
+    }
+
+    .intro-card-stack {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+    }
+
+    .intro-card-stack img {
+      width: 100%;
+      height: 480px;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .intro-card-stack:hover img {
+      transform: scale(1.04);
+    }
+
+    /* Section: Experience Cards */
+    .dark-section {
+      background-color: var(--bg-dark);
+      color: #ffffff;
+    }
+
+    .dark-section .section-title {
+      color: #ffffff;
+    }
+
+    .experience-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 1.8rem;
+    }
+
+    .exp-card {
+      position: relative;
+      height: 460px;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+      cursor: pointer;
+    }
+
+    .exp-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .exp-card:hover img {
+      transform: scale(1.08);
+    }
+
+    .exp-card-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        180deg,
+        rgba(0,0,0,0.1) 20%,
+        rgba(7, 21, 24, 0.92) 100%
+      );
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 2rem 1.6rem;
+      transition: background 0.3s ease;
+    }
+
+    .exp-card:hover .exp-card-overlay {
+      background: linear-gradient(
+        180deg,
+        rgba(0,0,0,0.2) 10%,
+        rgba(7, 21, 24, 0.96) 100%
+      );
+    }
+
+    .exp-card h3 {
+      font-size: 1.6rem;
+      margin-bottom: 0.5rem;
+      font-family: var(--font-ar-display);
+    }
+
+    html[lang="en"] .exp-card h3 {
+      font-family: var(--font-en-serif);
+    }
+
+    .exp-card p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+
+    .exp-badge {
+      align-self: flex-start;
+      padding: 0.3rem 0.8rem;
+      border-radius: var(--radius-full);
+      background: rgba(200, 159, 85, 0.2);
+      border: 1px solid rgba(200, 159, 85, 0.4);
+      color: var(--accent-gold-light);
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+
+    /* Section: Cabins / Stay Showcase */
+    .stay-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3.5rem;
+      align-items: center;
+      background: #ffffff;
+      padding: 4rem 5vw;
+      border-radius: var(--radius-lg);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.06);
+    }
+
+    .stay-gallery {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+
+    .stay-gallery img {
+      border-radius: var(--radius-md);
+      height: 220px;
+      width: 100%;
+      object-fit: cover;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .stay-gallery img:first-child {
+      grid-column: span 2;
+      height: 260px;
+    }
+
+    .stay-gallery img:hover {
+      transform: translateY(-3px);
+    }
+
+    .stay-details h3 {
+      font-size: 2.2rem;
+      margin-bottom: 1.2rem;
+      line-height: 1.25;
+    }
+
+    .amenities-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.2rem;
+      margin: 2rem 0;
+      list-style: none;
+    }
+
+    .amenity-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .amenity-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(14, 124, 141, 0.1);
+      color: var(--sea-teal);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+    }
+
+    /* Section: Gallery Lightbox Grid */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.2rem;
+    }
+
+    .gallery-item {
+      position: relative;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      height: 280px;
+      cursor: pointer;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.08);
+    }
+
+    .gallery-hover {
+      position: absolute;
+      inset: 0;
+      background: rgba(7, 21, 24, 0.45);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      color: #ffffff;
+      font-size: 2rem;
+    }
+
+    .gallery-item:hover .gallery-hover {
+      opacity: 1;
+    }
+
+    /* Section: Reviews / Testimonials */
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .review-card {
+      background: #ffffff;
+      padding: 2.2rem;
+      border-radius: var(--radius-md);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+      border: 1px solid var(--sand-muted);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .review-stars {
+      color: var(--accent-gold);
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .review-text {
+      font-size: 1.05rem;
+      color: var(--text-dark);
+      margin-bottom: 1.5rem;
+      font-style: italic;
+    }
+
+    .reviewer-info {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+    }
+
+    .reviewer-avatar {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      background: var(--sea-teal);
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+    }
+
+    .reviewer-details h5 {
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .reviewer-details span {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* Section: FAQ Accordion */
+    .faq-container {
+      max-width: 800px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .faq-item {
+      background: #ffffff;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--sand-muted);
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .faq-question {
+      padding: 1.4rem 1.8rem;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--bg-dark);
+      text-align: initial;
+    }
+
+    .faq-icon {
+      font-size: 1.4rem;
+      transition: transform 0.3s ease;
+      color: var(--sea-teal);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.35s ease;
+      padding: 0 1.8rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 200px;
+      padding: 0 1.8rem 1.4rem 1.8rem;
+    }
+
+    .faq-item.active .faq-icon {
+      transform: rotate(45deg);
+    }
+
+    /* Section: Visit & Map Grid */
+    .visit-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: stretch;
+      background: var(--bg-dark);
+      color: #ffffff;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+
+    .visit-info {
+      padding: 4.5rem 4vw;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .visit-info h2 {
+      font-size: 2.8rem;
+      margin-bottom: 1.5rem;
+      color: #ffffff;
+    }
+
+    .contact-badge-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      margin: 2rem 0;
+    }
+
+    .contact-badge-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 1.05rem;
+    }
+
+    .contact-badge-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent-gold-light);
+    }
+
+    .map-frame-container {
+      width: 100%;
+      min-height: 450px;
+      position: relative;
+    }
+
+    .map-frame-container iframe {
+      width: 100%;
+      height: 100%;
+      min-height: 450px;
+      border: 0;
+    }
+
+    /* Footer */
+    footer {
+      background: #040c0e;
+      color: #ffffff;
+      padding: 4rem 7vw 2rem 7vw;
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 3rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .footer-brand p {
+      color: var(--text-muted);
+      margin-top: 1rem;
+      max-width: 360px;
+    }
+
+    .footer-links-col h4 {
+      font-size: 1.1rem;
+      margin-bottom: 1.2rem;
+      color: var(--accent-gold-light);
+    }
+
+    .footer-links-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    .footer-links-col a {
+      color: var(--text-muted);
+      transition: color 0.2s ease;
+    }
+
+    .footer-links-col a:hover {
+      color: #ffffff;
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    /* Modal Component */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(8px);
+      z-index: 2000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .modal-backdrop.open {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .modal-container {
+      background: #ffffff;
+      border-radius: var(--radius-lg);
+      max-width: 540px;
+      width: 100%;
+      padding: 2.5rem;
+      box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+      position: relative;
+      transform: translateY(20px);
+      transition: transform 0.3s ease;
+    }
+
+    .modal-backdrop.open .modal-container {
+      transform: translateY(0);
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 1.2rem;
+      left: 1.2rem;
+      font-size: 1.6rem;
+      color: var(--text-muted);
+      transition: color 0.2s ease;
+    }
+
+    html[dir="rtl"] .modal-close {
+      left: auto;
+      right: 1.2rem;
+    }
+
+    .modal-close:hover {
+      color: var(--bg-dark);
+    }
+
+    .form-group {
+      margin-bottom: 1.4rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: 700;
+      font-size: 0.9rem;
+      margin-bottom: 0.4rem;
+      color: var(--bg-dark);
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 0.85rem 1.1rem;
+      border-radius: var(--radius-sm);
+      border: 1.5px solid var(--sand-muted);
+      font-family: inherit;
+      font-size: 0.95rem;
+      transition: border-color 0.2s ease;
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--sea-teal);
+    }
+
+    /* Floating WhatsApp Widget */
+    .whatsapp-widget {
+      position: fixed;
+      bottom: 2rem;
+      left: 2rem;
+      z-index: 900;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      background: #25d366;
+      color: #ffffff;
+      padding: 0.85rem 1.4rem;
+      border-radius: var(--radius-full);
+      box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+      font-weight: 700;
+      font-size: 0.95rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    html[dir="rtl"] .whatsapp-widget {
+      left: auto;
+      right: 2rem;
+    }
+
+    .whatsapp-widget:hover {
+      transform: scale(1.06);
+      box-shadow: 0 14px 30px rgba(37, 211, 102, 0.55);
+    }
+
+    .whatsapp-icon {
+      font-size: 1.4rem;
+    }
+
+    /* Lightbox Modal */
+    .lightbox-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.92);
+      z-index: 2500;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .lightbox-modal.open {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .lightbox-modal img {
+      max-width: 90vw;
+      max-height: 85vh;
+      object-fit: contain;
+      border-radius: var(--radius-md);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+      color: #ffffff;
+      font-size: 2.5rem;
+      cursor: pointer;
+    }
+
+    /* Media Queries Responsive */
+    @media (max-width: 992px) {
+      .nav-links { display: none; }
+      .menu-btn { display: block; }
+      .intro-grid, .stay-container, .visit-grid { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr; }
+      .hero-stats { position: relative; bottom: auto; left: auto; right: auto; margin-top: 3rem; }
+      section { padding: 4.5rem 5vw; }
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 2.5rem; }
+      .stay-gallery { grid-template-columns: 1fr; }
+      .stay-gallery img:first-child { grid-column: span 1; }
+      .amenities-list { grid-template-columns: 1fr; }
+      .whatsapp-widget span { display: none; }
+      .whatsapp-widget { padding: 0.9rem; border-radius: 50%; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header / Nav -->
+  <header id="header">
+    <a href="#" class="brand">
+      <span class="brand-mark">W</span>
+      <span data-i18n="brand_name">وايت بيتش · رأس البر</span>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="#experience" data-i18n="nav_experience">التجارب والأنشطة</a></li>
+      <li><a href="#stay" data-i18n="nav_cabins">الشاليهات والغرف</a></li>
+      <li><a href="#gallery" data-i18n="nav_gallery">معرض الصور</a></li>
+      <li><a href="#reviews" data-i18n="nav_reviews">آراء الزوار</a></li>
+      <li><a href="#faq" data-i18n="nav_faq">الأسئلة الشائعة</a></li>
+      <li><a href="#visit" data-i18n="nav_location">الموقع والاتصال</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <button class="lang-toggle" id="langBtn" onclick="toggleLanguage()">
+        🌐 <span id="langText">English</span>
+      </button>
+
+      <button class="btn btn-gold" onclick="openBookingModal()" data-i18n="book_now_btn">
+        احجز الآن ↗
+      </button>
+
+      <button class="menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle Navigation">
+        ☰
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Navigation -->
+  <div class="mobile-nav" id="mobileNav">
+    <button class="modal-close" onclick="toggleMobileMenu()">✕</button>
+    <ul>
+      <li><a href="#experience" onclick="toggleMobileMenu()" data-i18n="nav_experience">التجارب والأنشطة</a></li>
+      <li><a href="#stay" onclick="toggleMobileMenu()" data-i18n="nav_cabins">الشاليهات والغرف</a></li>
+      <li><a href="#gallery" onclick="toggleMobileMenu()" data-i18n="nav_gallery">معرض الصور</a></li>
+      <li><a href="#reviews" onclick="toggleMobileMenu()" data-i18n="nav_reviews">آراء الزوار</a></li>
+      <li><a href="#faq" onclick="toggleMobileMenu()" data-i18n="nav_faq">الأسئلة الشائعة</a></li>
+      <li><a href="#visit" onclick="toggleMobileMenu()" data-i18n="nav_location">الموقع والاتصال</a></li>
+    </ul>
+    <button class="btn btn-gold" onclick="toggleMobileMenu(); openBookingModal();" data-i18n="book_now_btn">
+      احجز الآن ↗
+    </button>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <img src="assets/hero.jpg" alt="White Beach Ras El Bar" class="hero-bg">
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+      <div class="hero-badge" data-i18n="hero_badge">
+        📍 رأس البر · شارع 107 · دمياط · مصر
+      </div>
+
+      <h1 class="title-display" data-i18n="hero_title">
+        وايت بيتش<br>حيث يلتقي سحر البحر بالفخامة
+      </h1>
+
+      <p data-i18n="hero_desc">
+        استمتع بأجمل الأوقات الصيفية على شاطئ البحر الأبيض المتوسط مباشرة، شاليهات خاصة، أكوا بارك، مطاعم وكافيهات فاخرة.
+      </p>
+
+      <div class="hero-cta-group">
+        <button class="btn btn-primary" onclick="openBookingModal()" data-i18n="hero_cta_primary">
+          احجز تجربتك الآن ↗
+        </button>
+        <a href="#experience" class="btn btn-outline" data-i18n="hero_cta_secondary">
+          استكشف الأنشطة ↓
+        </a>
+      </div>
+    </div>
+
+    <!-- Quick Stats Bar -->
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-icon">⭐️</div>
+        <div class="stat-text">
+          <h4>4.9 / 5.0</h4>
+          <p data-i18n="stat_1_sub">تقييم الزوار الممتاز</p>
+        </div>
+      </div>
+
+      <div class="stat-item">
+        <div class="stat-icon">🌊</div>
+        <div class="stat-text">
+          <h4 data-i18n="stat_2_title">شاطئ خاص</h4>
+          <p data-i18n="stat_2_sub">مباشرة على البحر</p>
+        </div>
+      </div>
+
+      <div class="stat-item">
+        <div class="stat-icon">🏡</div>
+        <div class="stat-text">
+          <h4 data-i18n="stat_3_title">شاليهات ساحلية</h4>
+          <p data-i18n="stat_3_sub">غرف خشبية ومكيفات</p>
+        </div>
+      </div>
+
+      <div class="stat-item">
+        <div class="stat-icon">🎢</div>
+        <div class="stat-text">
+          <h4 data-i18n="stat_4_title">أكوا بارك</h4>
+          <p data-i18n="stat_4_sub">ألعاب مائية لكافة الأعمار</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Intro / Story -->
+  <section>
+    <div class="intro-grid">
+      <div class="intro-text">
+        <div class="kicker" data-i18n="intro_kicker">ملاذك الخصيصي في رأس البر</div>
+        <h2 class="title-display" data-i18n="intro_title">
+          اجلس على الشاطئ..<br>دع البحر يجدد روحك.
+        </h2>
+        <p data-i18n="intro_body">
+          يقدم وايت بيتش رأس البر تجربة استثنائية تجمع بين الطبيعة الساحلية الأنيقة والمرافق الترفيهية الفاخرة. سواء كنت تبحث عن يوم عائلي ممتع في الأكوا بارك، أو إقامة هادئة في الغرف والمطاعم المباشرة على الشاطئ، فإن وايت بيتش هو وجهتك الأولى الصيفية.
+        </p>
+        <div class="intro-signature">White Beach · Ras El Bar</div>
+      </div>
+
+      <div class="intro-card-stack">
+        <img src="assets/sea_clean.jpg" alt="White Beach Seaside View">
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Experience Grid -->
+  <section class="dark-section" id="experience">
+    <div class="section-header">
+      <div class="kicker" data-i18n="exp_kicker">تجارب وايت بيتش المتنوعة</div>
+      <h2 class="title-display section-title" data-i18n="exp_title">
+        بحر. ألعاب. إقامة. استجمام.
+      </h2>
+    </div>
+
+    <div class="experience-grid">
+      <!-- Card 1 -->
+      <div class="exp-card" onclick="openBookingModal()">
+        <img src="assets/aquapark_clean.jpg" alt="Aqua Park">
+        <div class="exp-card-overlay">
+          <span class="exp-badge" data-i18n="exp_1_badge">متعة العائلة</span>
+          <h3 data-i18n="exp_1_title">الأكوا بارك والأنشطة المائية</h3>
+          <p data-i18n="exp_1_desc">زحاليق مائية ومسبح متكامل مجهز لأفضل الأوقات الصيفية.</p>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="exp-card" onclick="openBookingModal()">
+        <img src="assets/beach_clean.jpg" alt="Private Beach">
+        <div class="exp-card-overlay">
+          <span class="exp-badge" data-i18n="exp_2_badge">استجمام على الرمل</span>
+          <h3 data-i18n="exp_2_title">الشاطئ الخاص والجلسات</h3>
+          <p data-i18n="exp_2_desc">شماسي واسعة، كراسي مريحة وخدمة مشروبات على البحر مباشرة.</p>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="exp-card" onclick="openBookingModal()">
+        <img src="assets/cabin_room_clean.jpg" alt="Seaside Cabins">
+        <div class="exp-card-overlay">
+          <span class="exp-badge" data-i18n="exp_3_badge">إقامة فاخرة</span>
+          <h3 data-i18n="exp_3_title">الشاليهات والغرف الساحلية</h3>
+          <p data-i18n="exp_3_desc">تصاميم خشبية دافئة، تكييف كامل، وإطلالات مباشرة على الموج.</p>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="exp-card" onclick="openBookingModal()">
+        <img src="assets/restaurant_clean.jpg" alt="Restaurant & Cafe">
+        <div class="exp-card-overlay">
+          <span class="exp-badge" data-i18n="exp_4_badge">مأكولات ومشروبات</span>
+          <h3 data-i18n="exp_4_title">المطاعم والكافيهات</h3>
+          <p data-i18n="exp_4_desc">أشهى المأكولات البحرية والمشروبات المنعشة أمام منظر الغروب.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Stay / Cabins Showcase -->
+  <section id="stay">
+    <div class="stay-container">
+      <div class="stay-gallery">
+        <img src="assets/cabin_interior_clean.jpg" alt="Cabin Interior" onclick="openLightbox(this.src)">
+        <img src="assets/cabin_bed_clean.jpg" alt="Cabin Bed" onclick="openLightbox(this.src)">
+        <img src="assets/cabins_exterior_clean.jpg" alt="Cabins Exterior" onclick="openLightbox(this.src)">
+      </div>
+
+      <div class="stay-details">
+        <div class="kicker" data-i18n="stay_kicker">إقامة خاصة على البحر</div>
+        <h3 class="title-display" data-i18n="stay_title">
+          شاليهاتك الخاصة، حيث تصحو على صوت الموج.
+        </h3>
+        <p data-i18n="stay_desc">
+          تم تصميم شاليهات وغرف وايت بيتش لمنحك أعلى مستويات الخصوصية والراحة. خشب طبيعي، تجهيزات حديثة، وإطلالة ساحرة تضمن لك ولعائلتك تجربة لا تُنسى.
+        </p>
+
+        <ul class="amenities-list">
+          <li class="amenity-item">
+            <div class="amenity-icon">❄️</div>
+            <span data-i18n="amenity_1">تكييف هواء حديث</span>
+          </li>
+          <li class="amenity-item">
+            <div class="amenity-icon">🌅</div>
+            <span data-i18n="amenity_2">تراس وإطلالة مباشرة</span>
+          </li>
+          <li class="amenity-item">
+            <div class="amenity-icon">☕</div>
+            <span data-i18n="amenity_3">ركن مشروبات وقهوة</span>
+          </li>
+          <li class="amenity-item">
+            <div class="amenity-icon">🚿</div>
+            <span data-i18n="amenity_4">حمام خاص وفاخر</span>
+          </li>
+        </ul>
+
+        <button class="btn btn-primary" onclick="openBookingModal()" data-i18n="stay_cta">
+          استعلم عن توافر الغرف ↗
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Gallery Grid -->
+  <section id="gallery">
+    <div class="section-header">
+      <div class="kicker" data-i18n="gallery_kicker">معرض الصور الحقيقي</div>
+      <h2 class="title-display section-title" data-i18n="gallery_title">
+        لقطات من قلب وايت بيتش
+      </h2>
+    </div>
+
+    <div class="gallery-grid">
+      <div class="gallery-item" onclick="openLightbox('assets/sea_clean.jpg')">
+        <img src="assets/sea_clean.jpg" alt="Sea View">
+        <div class="gallery-hover">🔍</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox('assets/cabins_exterior_clean.jpg')">
+        <img src="assets/cabins_exterior_clean.jpg" alt="Cabins">
+        <div class="gallery-hover">🔍</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox('assets/restaurant_clean.jpg')">
+        <img src="assets/restaurant_clean.jpg" alt="Restaurant">
+        <div class="gallery-hover">🔍</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox('assets/beach_clean.jpg')">
+        <img src="assets/beach_clean.jpg" alt="Beach">
+        <div class="gallery-hover">🔍</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox('assets/aquapark_clean.jpg')">
+        <img src="assets/aquapark_clean.jpg" alt="Aqua Park">
+        <div class="gallery-hover">🔍</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox('assets/cabin_room_clean.jpg')">
+        <img src="assets/cabin_room_clean.jpg" alt="Cabin Room">
+        <div class="gallery-hover">🔍</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Reviews -->
+  <section class="dark-section" id="reviews">
+    <div class="section-header">
+      <div class="kicker" data-i18n="reviews_kicker">انطباعات الضيوف</div>
+      <h2 class="title-display section-title" data-i18n="reviews_title">
+        ماذا يقول زوارنا عن وايت بيتش؟
+      </h2>
+    </div>
+
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text" data-i18n="review_1_text">
+          "المكان ممتاز جداً ونظيف، الأكوا بارك ممتعة للأطفال والشاليهات خشبية دافئة ومطلة على البحر مباشرة. الخدمة راقية جداً."
+        </p>
+        <div class="reviewer-info">
+          <div class="reviewer-avatar">أ</div>
+          <div class="reviewer-details">
+            <h5 data-i18n="review_1_name">أحمد متولي</h5>
+            <span data-i18n="review_1_location">القاهرة · مصر</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text" data-i18n="review_2_text">
+          "أجمل مكان في رأس البر لقضاء يوم عائلي مميز. المطعم أكله فريش والفيو على الغروب خيالي."
+        </p>
+        <div class="reviewer-info">
+          <div class="reviewer-avatar">م</div>
+          <div class="reviewer-details">
+            <h5 data-i18n="review_2_name">منى الدسوقي</h5>
+            <span data-i18n="review_2_location">المنصورة · مصر</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text" data-i18n="review_3_text">
+          "الخصوصية والهدوء والمعاملة المحترمة من طاقم العمل جعلت تجربتنا رائعة. سنكرر الزيارة بالتأكيد."
+        </p>
+        <div class="reviewer-info">
+          <div class="reviewer-avatar">ك</div>
+          <div class="reviewer-details">
+            <h5 data-i18n="review_3_name">كريم الصاوي</h5>
+            <span data-i18n="review_3_location">دمياط · مصر</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: FAQ Accordions -->
+  <section id="faq">
+    <div class="section-header" style="text-align: center; margin: 0 auto 3rem auto;">
+      <div class="kicker" data-i18n="faq_kicker">أسئلة مكررة</div>
+      <h2 class="title-display section-title" data-i18n="faq_title">
+        كل ما تحتاج معرفته قبل زيارتك
+      </h2>
+    </div>
+
+    <div class="faq-container">
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <button class="faq-question">
+          <span data-i18n="faq_q1">ما هي مواعيد العمل اليومية في الشاطئ والأكوا بارك؟</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p data-i18n="faq_a1">يستقبل وايت بيتش الزوار يومياً من الساعة 8:00 صباحاً وحتى الساعة 11:00 مساءً. وتعمل الأكوا بارك طوال ساعات النهار.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <button class="faq-question">
+          <span data-i18n="faq_q2">كيف يمكنني حجز شاليه أو غرفة للإقامة؟</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p data-i18n="faq_a2">يمكنك الحجز بسهولة بالضغط على زر "احجز الآن" لتحديد الموعد وعدد الأفراد، وسيتم توجيهك مباشرة لواتساب لإتمام الحجز وتأكيده.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <button class="faq-question">
+          <span data-i18n="faq_q3">هل تتوافر خدمات طعام ومشروبات داخل المكان؟</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p data-i18n="faq_a3">نعم، يوجد مطعم وكافيه متكامل يقدم الوجبات البحرية، الساندوتشات، والمشروبات الباردة والساخنة مباشرة على البحر.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Location & Map -->
+  <section id="visit" style="padding: 0;">
+    <div class="visit-grid">
+      <div class="visit-info">
+        <div class="kicker" data-i18n="visit_kicker">يسعدنا استقبالكم</div>
+        <h2 class="title-display" data-i18n="visit_title">
+          ننتظركم على شاطئ رأس البر
+        </h2>
+
+        <div class="contact-badge-list">
+          <div class="contact-badge-item">
+            <div class="contact-badge-icon">📍</div>
+            <div>
+              <strong data-i18n="loc_address_label">العنوان:</strong><br>
+              <span data-i18n="loc_address_val">رأس البر · شارع 107 · محافظة دمياط · مصر</span>
+            </div>
+          </div>
+
+          <div class="contact-badge-item">
+            <div class="contact-badge-icon">📞</div>
+            <div>
+              <strong data-i18n="loc_phone_label">الهاتف والواتساب:</strong><br>
+              <span>+20 104 050 5047</span>
+            </div>
+          </div>
+
+          <div class="contact-badge-item">
+            <div class="contact-badge-icon">🌐</div>
+            <div>
+              <strong data-i18n="loc_social_label">شبكات التواصل الاجتماعي:</strong><br>
+              <a href="https://www.facebook.com/share/1GwK7d7DDf/" target="_blank" style="text-decoration: underline;">Facebook</a> · 
+              <a href="https://www.instagram.com/whitebeachraselbar/" target="_blank" style="text-decoration: underline;">Instagram</a>
+            </div>
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1rem;">
+          <a href="https://www.google.com/maps/search/?api=1&query=White%20Beach%20Ras%20El%20Bar%20Street%20107" target="_blank" class="btn btn-gold" data-i18n="gmaps_btn">
+            فتح في خرائط جوجل Google Maps ↗
+          </a>
+          <button onclick="openBookingModal()" class="btn btn-outline" data-i18n="contact_us_btn">
+            تواصل معنا مباشرة
+          </button>
+        </div>
+      </div>
+
+      <div class="map-frame-container">
+        <iframe src="https://maps.google.com/maps?q=Ras%20El%20Bar%20Street%20107%20Damietta&t=&z=15&ie=UTF8&iwloc=&output=embed" loading="lazy" title="Google Map Location"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="#" class="brand">
+          <span class="brand-mark">W</span>
+          <span>WHITE BEACH</span>
+        </a>
+        <p data-i18n="footer_desc">
+          الوجهة الصيفية الأولى في رأس البر لجميع الأنشطة البحرية، الشاليهات والإقامة الساحلية الفاخرة.
+        </p>
+      </div>
+
+      <div class="footer-links-col">
+        <h4 data-i18n="footer_quick_links">روابط سريعة</h4>
+        <ul>
+          <li><a href="#experience" data-i18n="nav_experience">التجارب والأنشطة</a></li>
+          <li><a href="#stay" data-i18n="nav_cabins">الشاليهات والغرف</a></li>
+          <li><a href="#gallery" data-i18n="nav_gallery">معرض الصور</a></li>
+          <li><a href="#faq" data-i18n="nav_faq">الأسئلة الشائعة</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links-col">
+        <h4 data-i18n="footer_connect">تواصل معنا</h4>
+        <ul>
+          <li><a href="https://wa.me/201040505047" target="_blank">WhatsApp: +201040505047</a></li>
+          <li><a href="https://www.facebook.com/share/1GwK7d7DDf/" target="_blank">Facebook Page</a></li>
+          <li><a href="https://www.instagram.com/whitebeachraselbar/" target="_blank">Instagram Profile</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>© <span id="year"></span> White Beach Ras El Bar. All rights reserved.</div>
+      <div>Designed with elegance & luxury for White Beach.</div>
+    </div>
+  </footer>
+
+  <!-- Booking Modal -->
+  <div class="modal-backdrop" id="bookingModal">
+    <div class="modal-container">
+      <button class="modal-close" onclick="closeBookingModal()">✕</button>
+      
+      <h3 class="title-display" style="margin-bottom: 0.5rem;" data-i18n="modal_title">حجز واستعلام وايت بيتش</h3>
+      <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.9rem;" data-i18n="modal_sub">
+        اختر تفاصيل زيارتك وسيتم تجهيز الرسالة مباشرة عبر الواتساب لتأكيد الحجز.
+      </p>
+
+      <form onsubmit="sendWhatsAppBooking(event)">
+        <div class="form-group">
+          <label data-i18n="form_service_label">نوع الخدمة المطلوب:</label>
+          <select class="form-control" id="formService">
+            <option value="حجز شاليه للإقامة (Cabin Stay)" data-i18n="opt_cabin">حجز شاليه / غرفة ساحلية للإقامة</option>
+            <option value="دخول الشاطئ والأكوا بارك (Day Use)" data-i18n="opt_day">دخول يومي للشاطئ والأكوا بارك</option>
+            <option value="حجز طاولة مطعم/كافيه" data-i18n="opt_dining">حجز طاولة بالمطعم أو الكافيه</option>
+            <option value="استفسار عام" data-i18n="opt_general">استفسار عام عن الأسعار</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label data-i18n="form_date_label">تاريخ الزيارة المقترح:</label>
+          <input type="date" class="form-control" id="formDate" required>
+        </div>
+
+        <div class="form-group">
+          <label data-i18n="form_guests_label">عدد الأفراد (البالغين والأطفال):</label>
+          <input type="number" min="1" max="50" value="2" class="form-control" id="formGuests" required>
+        </div>
+
+        <div class="form-group">
+          <label data-i18n="form_name_label">اسمك الكريم:</label>
+          <input type="text" placeholder="مثال: أحمد علي" class="form-control" id="formName" required>
+        </div>
+
+        <button type="submit" class="btn btn-gold" style="width: 100%; margin-top: 0.5rem;" data-i18n="form_submit_btn">
+          إرسال طلب الحجز عبر الواتساب 💬
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Lightbox Modal -->
+  <div class="lightbox-modal" id="lightboxModal" onclick="closeLightbox()">
+    <span class="lightbox-close">✕</span>
+    <img id="lightboxImg" src="" alt="Fullscreen Lightbox">
+  </div>
+
+  <!-- Floating WhatsApp Widget -->
+  <a href="https://wa.me/201040505047?text=مرحباً%20وايت%20بيتش%20رأس%20البر،%20أود%20الاستفسار%20عن%20الحجز%20والأسعار" target="_blank" class="whatsapp-widget" title="تواصل معنا عبر الواتساب">
+    <span class="whatsapp-icon">💬</span>
+    <span data-i18n="wa_widget">تواصل واتساب مباشر</span>
+  </a>
+
+  <!-- JavaScript Translations & Logic -->
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Scroll Navbar Reaction
+    window.addEventListener('scroll', () => {
+      const header = document.getElementById('header');
+      if (window.scrollY > 40) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+
+    // Bilingual Translations Database
+    const i18n = {
+      ar: {
+        brand_name: "وايت بيتش · رأس البر",
+        nav_experience: "التجارب والأنشطة",
+        nav_cabins: "الشاليهات والغرف",
+        nav_gallery: "معرض الصور",
+        nav_reviews: "آراء الزوار",
+        nav_faq: "الأسئلة الشائعة",
+        nav_location: "الموقع والاتصال",
+        book_now_btn: "احجز الآن ↗",
+        hero_badge: "📍 رأس البر · شارع 107 · دمياط · مصر",
+        hero_title: "وايت بيتش<br>حيث يلتقي سحر البحر بالفخامة",
+        hero_desc: "استمتع بأجمل الأوقات الصيفية على شاطئ البحر الأبيض المتوسط مباشرة، شاليهات خاصة، أكوا بارك، مطاعم وكافيهات فاخرة.",
+        hero_cta_primary: "احجز تجربتك الآن ↗",
+        hero_cta_secondary: "استكشف الأنشطة ↓",
+        stat_1_sub: "تقييم الزوار الممتاز",
+        stat_2_title: "شاطئ خاص",
+        stat_2_sub: "مباشرة على البحر",
+        stat_3_title: "شاليهات ساحلية",
+        stat_3_sub: "غرف خشبية ومكيفات",
+        stat_4_title: "أكوا بارك",
+        stat_4_sub: "ألعاب مائية لكافة الأعمار",
+        intro_kicker: "ملاذك الخصيصي في رأس البر",
+        intro_title: "اجلس على الشاطئ..<br>دع البحر يجدد روحك.",
+        intro_body: "يقدم وايت بيتش رأس البر تجربة استثنائية تجمع بين الطبيعة الساحلية الأنيقة والمرافق الترفيهية الفاخرة. سواء كنت تبحث عن يوم عائلي ممتع في الأكوا بارك، أو إقامة هادئة في الغرف والمطاعم المباشرة على الشاطئ، فإن وايت بيتش هو وجهتك الأولى الصيفية.",
+        exp_kicker: "تجارب وايت بيتش المتنوعة",
+        exp_title: "بحر. ألعاب. إقامة. استجمام.",
+        exp_1_badge: "متعة العائلة",
+        exp_1_title: "الأكوا بارك والأنشطة المائية",
+        exp_1_desc: "زحاليق مائية ومسبح متكامل مجهز لأفضل الأوقات الصيفية.",
+        exp_2_badge: "استجمام على الرمل",
+        exp_2_title: "الشاطئ الخاص والجلسات",
+        exp_2_desc: "شماسي واسعة، كراسي مريحة وخدمة مشروبات على البحر مباشرة.",
+        exp_3_badge: "إقامة فاخرة",
+        exp_3_title: "الشاليهات والغرف الساحلية",
+        exp_3_desc: "تصاميم خشبية دافئة، تكييف كامل، وإطلالات مباشرة على الموج.",
+        exp_4_badge: "مأكولات ومشروبات",
+        exp_4_title: "المطاعم والكافيهات",
+        exp_4_desc: "أشهى المأكولات البحرية والمشروبات المنعشة أمام منظر الغروب.",
+        stay_kicker: "إقامة خاصة على البحر",
+        stay_title: "شاليهاتك الخاصة، حيث تصحو على صوت الموج.",
+        stay_desc: "تم تصميم شاليهات وغرف وايت بيتش لمنحك أعلى مستويات الخصوصية والراحة. خشب طبيعي، تجهيزات حديثة، وإطلالة ساحرة تضمن لك ولعائلتك تجربة لا تُنسى.",
+        amenity_1: "تكييف هواء حديث",
+        amenity_2: "تراس وإطلالة مباشرة",
+        amenity_3: "ركن مشروبات وقهوة",
+        amenity_4: "حمام خاص وفاخر",
+        stay_cta: "استعلم عن توافر الغرف ↗",
+        gallery_kicker: "معرض الصور الحقيقي",
+        gallery_title: "لقطات من قلب وايت بيتش",
+        reviews_kicker: "انطباعات الضيوف",
+        reviews_title: "ماذا يقول زوارنا عن وايت بيتش؟",
+        review_1_text: "\"المكان ممتاز جداً ونظيف، الأكوا بارك ممتعة للأطفال والشاليهات خشبية دافئة ومطلة على البحر مباشرة. الخدمة راقية جداً.\"",
+        review_1_name: "أحمد متولي",
+        review_1_location: "القاهرة · مصر",
+        review_2_text: "\"أجمل مكان في رأس البر لقضاء يوم عائلي مميز. المطعم أكله فريش والفيو على الغروب خيالي.\"",
+        review_2_name: "منى الدسوقي",
+        review_2_location: "المنصورة · مصر",
+        review_3_text: "\"الخصوصية والهدوء والمعاملة المحترمة من طاقم العمل جعلت تجربتنا رائعة. سنكرر الزيارة بالتأكيد.\"",
+        review_3_name: "كريم الصاوي",
+        review_3_location: "دمياط · مصر",
+        faq_kicker: "أسئلة مكررة",
+        faq_title: "كل ما تحتاج معرفته قبل زيارتك",
+        faq_q1: "ما هي مواعيد العمل اليومية في الشاطئ والأكوا بارك؟",
+        faq_a1: "يستقبل وايت بيتش الزوار يومياً من الساعة 8:00 صباحاً وحتى الساعة 11:00 مساءً. وتعمل الأكوا بارك طوال ساعات النهار.",
+        faq_q2: "كيف يمكنني حجز شاليه أو غرفة للإقامة؟",
+        faq_a2: "يمكنك الحجز بسهولة بالضغط على زر \"احجز الآن\" لتحديد الموعد وعدد الأفراد، وسيتم توجيهك مباشرة لواتساب لإتمام الحجز وتأكيده.",
+        faq_q3: "هل تتوافر خدمات طعام ومشروبات داخل المكان؟",
+        faq_a3: "نعم، يوجد مطعم وكافيه متكامل يقدم الوجبات البحرية، الساندوتشات، والمشروبات الباردة والساخنة مباشرة على البحر.",
+        visit_kicker: "يسعدنا استقبالكم",
+        visit_title: "ننتظركم على شاطئ رأس البر",
+        loc_address_label: "العنوان:",
+        loc_address_val: "رأس البر · شارع 107 · محافظة دمياط · مصر",
+        loc_phone_label: "الهاتف والواتساب:",
+        loc_social_label: "شبكات التواصل الاجتماعي:",
+        gmaps_btn: "فتح في خرائط جوجل Google Maps ↗",
+        contact_us_btn: "تواصل معنا مباشرة",
+        footer_desc: "الوجهة الصيفية الأولى في رأس البر لجميع الأنشطة البحرية، الشاليهات والإقامة الساحلية الفاخرة.",
+        footer_quick_links: "روابط سريعة",
+        footer_connect: "تواصل معنا",
+        modal_title: "حجز واستعلام وايت بيتش",
+        modal_sub: "اختر تفاصيل زيارتك وسيتم تجهيز الرسالة مباشرة عبر الواتساب لتأكيد الحجز.",
+        form_service_label: "نوع الخدمة المطلوب:",
+        opt_cabin: "حجز شاليه / غرفة ساحلية للإقامة",
+        opt_day: "دخول يومي للشاطئ والأكوا بارك",
+        opt_dining: "حجز طاولة بالمطعم أو الكافيه",
+        opt_general: "استفسار عام عن الأسعار",
+        form_date_label: "تاريخ الزيارة المقترح:",
+        form_guests_label: "عدد الأفراد (البالغين والأطفال):",
+        form_name_label: "اسمك الكريم:",
+        form_submit_btn: "إرسال طلب الحجز عبر الواتساب 💬",
+        wa_widget: "تواصل واتساب مباشر"
+      },
+      en: {
+        brand_name: "WHITE BEACH · Ras El Bar",
+        nav_experience: "Experience",
+        nav_cabins: "Stay & Cabins",
+        nav_gallery: "Gallery",
+        nav_reviews: "Reviews",
+        nav_faq: "FAQ",
+        nav_location: "Location",
+        book_now_btn: "Book Now ↗",
+        hero_badge: "📍 Ras El Bar · Street 107 · Damietta · Egypt",
+        hero_title: "White Beach<br>Where Luxury Meets The Ocean",
+        hero_desc: "Experience premier seaside getaway in Ras El Bar: private coastal cabins, thrilling aqua park, and sea view dining.",
+        hero_cta_primary: "Book Your Escape ↗",
+        hero_cta_secondary: "Explore Experiences ↓",
+        stat_1_sub: "Guest Rating Score",
+        stat_2_title: "Private Beach",
+        stat_2_sub: "Direct Sea Access",
+        stat_3_title: "Coastal Cabins",
+        stat_3_sub: "A/C & Wood Finish",
+        stat_4_title: "Aqua Park",
+        stat_4_sub: "Water Slides & Fun",
+        intro_kicker: "Your Private Escape in Ras El Bar",
+        intro_title: "Meet me by the sea..<br>Let the ocean refresh your soul.",
+        intro_body: "White Beach Ras El Bar offers a refined coastal experience combining natural serenity with modern luxury. Whether seeking a family day at the aqua park or a peaceful stay in seafront cabins, White Beach is your ideal summer sanctuary.",
+        exp_kicker: "The White Beach Signature",
+        exp_title: "Sea. Play. Stay. Serenity.",
+        exp_1_badge: "Family Fun",
+        exp_1_title: "Aqua Park & Water Thrills",
+        exp_1_desc: "Exciting slides and pools designed for endless summer enjoyment.",
+        exp_2_badge: "Beach Relaxation",
+        exp_2_title: "Private Shore & Lounges",
+        exp_2_desc: "Shaded cabanas, comfortable daybeds, and beachfront service.",
+        exp_3_badge: "Luxury Accommodation",
+        exp_3_title: "Seaside Rooms & Cabins",
+        exp_3_desc: "Cozy timber architecture, climate control, and stunning sea views.",
+        exp_4_badge: "Dining & Refreshments",
+        exp_4_title: "Seaside Restaurant & Bar",
+        exp_4_desc: "Fresh seafood delicacies and chilled beverages over sunset vistas.",
+        stay_kicker: "Private Coastal Retreat",
+        stay_title: "Wake up to the gentle murmur of waves.",
+        stay_desc: "Crafted for privacy and relaxation. Natural woodwork, premium bedding, and panoramic sea balconies deliver an unmatchable stay.",
+        amenity_1: "Climate Control / A/C",
+        amenity_2: "Sea View Balcony",
+        amenity_3: "Refreshment Corner",
+        amenity_4: "En-suite Bathroom",
+        stay_cta: "Check Cabin Availability ↗",
+        gallery_kicker: "Authentic Atmosphere",
+        gallery_title: "Moments from White Beach",
+        reviews_kicker: "Guest Stories",
+        reviews_title: "What Visitors Say About Us",
+        review_1_text: "\"Extremely clean, modern aqua park for kids, and cozy wooden cabins right on the shore. Outstanding hospitality!\"",
+        review_1_name: "Ahmed Metwally",
+        review_1_location: "Cairo · Egypt",
+        review_2_text: "\"The top destination in Ras El Bar for a family trip. The fresh seafood and sunset views are simply breathtaking.\"",
+        review_2_name: "Mona El-Desouky",
+        review_2_location: "Mansoura · Egypt",
+        review_3_text: "\"Peaceful atmosphere, total privacy, and friendly staff made our vacation unforgettable.\"",
+        review_3_name: "Kareem El-Sawy",
+        review_3_location: "Damietta · Egypt",
+        faq_kicker: "Frequently Asked Questions",
+        faq_title: "Everything You Need to Know",
+        faq_q1: "What are the daily operating hours?",
+        faq_a1: "White Beach welcomes guests daily from 8:00 AM to 11:00 PM. Aqua Park operates throughout daylight hours.",
+        faq_q2: "How do I reserve a cabin or stay?",
+        faq_a2: "Click 'Book Now' to choose your preferred date and guests, and you'll be connected directly with our WhatsApp team.",
+        faq_q3: "Are food & beverage options available on-site?",
+        faq_a3: "Yes! Our seaside restaurant serves fresh seafood, snacks, cold beverages, and coffee right at your table or lounge.",
+        visit_kicker: "Visit Us Today",
+        visit_title: "We Look Forward to Welcoming You",
+        loc_address_label: "Address:",
+        loc_address_val: "Ras El Bar · Street 107 · Damietta Governorate · Egypt",
+        loc_phone_label: "Phone & WhatsApp:",
+        loc_social_label: "Social Media Channels:",
+        gmaps_btn: "Open in Google Maps ↗",
+        contact_us_btn: "Direct Contact",
+        footer_desc: "Ras El Bar's premier summer resort destination for beach days, water sports, and luxury seaside stays.",
+        footer_quick_links: "Quick Links",
+        footer_connect: "Connect",
+        modal_title: "White Beach Reservation",
+        modal_sub: "Select your visit preferences to compose a direct WhatsApp booking message.",
+        form_service_label: "Desired Service:",
+        opt_cabin: "Seaside Cabin Stay",
+        opt_day: "Day-Use Beach & Aqua Park Ticket",
+        opt_dining: "Restaurant & Cafe Reservation",
+        opt_general: "General Pricing Inquiry",
+        form_date_label: "Target Date:",
+        form_guests_label: "Number of Guests:",
+        form_name_label: "Your Full Name:",
+        form_submit_btn: "Send WhatsApp Reservation Request 💬",
+        wa_widget: "WhatsApp Direct Chat"
+      }
+    };
+
+    let currentLang = 'ar';
+
+    function toggleLanguage() {
+      currentLang = currentLang === 'ar' ? 'en' : 'ar';
+      document.documentElement.lang = currentLang;
+      document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+      
+      document.getElementById('langText').textContent = currentLang === 'ar' ? 'English' : 'عربي';
+
+      // Update all elements with data-i18n
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (i18n[currentLang][key]) {
+          el.innerHTML = i18n[currentLang][key];
+        }
+      });
+    }
+
+    // Modal Handlers
+    function openBookingModal() {
+      document.getElementById('bookingModal').classList.add('open');
+      const today = new Date().toISOString().split('T')[0];
+      document.getElementById('formDate').value = today;
+    }
+
+    function closeBookingModal() {
+      document.getElementById('bookingModal').classList.remove('open');
+    }
+
+    // Lightbox Handlers
+    function openLightbox(src) {
+      document.getElementById('lightboxImg').src = src;
+      document.getElementById('lightboxModal').classList.add('open');
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightboxModal').classList.remove('open');
+    }
+
+    // Mobile Menu Toggle
+    function toggleMobileMenu() {
+      document.getElementById('mobileNav').classList.toggle('open');
+    }
+
+    // FAQ Accordion Toggle
+    function toggleFaq(item) {
+      item.classList.toggle('active');
+    }
+
+    // WhatsApp Form Submit Generator
+    function sendWhatsAppBooking(e) {
+      e.preventDefault();
+      const service = document.getElementById('formService').value;
+      const date = document.getElementById('formDate').value;
+      const guests = document.getElementById('formGuests').value;
+      const name = document.getElementById('formName').value;
+
+      let msg = "";
+      if (currentLang === 'ar') {
+        msg = `مرحباً وايت بيتش رأس البر 👋%0Aأود طلب حجز / استفسار:%0A• الاسم: ${encodeURIComponent(name)}%0A• نوع الخدمة: ${encodeURIComponent(service)}%0A• التاريخ: ${encodeURIComponent(date)}%0A• عدد الأفراد: ${encodeURIComponent(guests)}%0Aشكراً جزيلاً.`;
+      } else {
+        msg = `Hello White Beach Ras El Bar 👋%0AI would like to make a reservation inquiry:%0A• Name: ${encodeURIComponent(name)}%0A• Service: ${encodeURIComponent(service)}%0A• Date: ${encodeURIComponent(date)}%0A• Guests: ${encodeURIComponent(guests)}%0AThank you.`;
+      }
+
+      window.open(`https://wa.me/201040505047?text=${msg}`, '_blank');
+      closeBookingModal();
+    }
+  </script>
+</body>
+</html>
